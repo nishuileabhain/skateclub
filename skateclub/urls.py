@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import skills.views
+
+
+# 3 args are the actual url, the view function and a name
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('', skills.views.roll, name='roll'), # this works
+    path('admin/', admin.site.urls),  # only the superuser will use this
+    path('', skills.views.homepage, name='home'),  # home page with no url required
     path('roll/', skills.views.roll, name='roll'),
 ]
