@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import skills.views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 # 3 args are the actual url, the view function and a name
@@ -24,3 +26,5 @@ urlpatterns = [
     path('', skills.views.homepage, name='home'),  # home page with no url required
     path('roll/', skills.views.roll, name='roll'),
 ]
+urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
