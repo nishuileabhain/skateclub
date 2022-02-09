@@ -124,7 +124,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # potentially can interfere with
 # STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')  # as used in CI E010 tutorial
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR  # potentially can interfere with AWS according to CI
+MEDIA_ROOT = BASE_DIR
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
