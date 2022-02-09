@@ -9,3 +9,7 @@ class Skill(models.Model):
     description = models.CharField(max_length=200)
     # maybe make this an FK
     difficulty = models.CharField(max_length=15, blank=True)
+
+    # function to list the skills by name insdteasd of object1 in the admin panel
+    def __str__(self):
+        return self.name

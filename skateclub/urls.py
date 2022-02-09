@@ -24,7 +24,8 @@ import skills.views
 urlpatterns = [
     path('admin/', admin.site.urls),  # only the superuser will use this
     path('', skills.views.homepage, name='home'),  # home page with no url required
-    path('roll/', skills.views.roll, name='roll'),
+    # path('roll/', skills.views.roll, name='roll'),
+    path('skills/<int:skill_id>', skills.views.detail, name='detail'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
