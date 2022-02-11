@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ix05-g*d(#@n10ei-&j=(qbne2v85=)iuj$lpe@cvxg+xu!)x&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-skateclub-app.herokuapp.com']
 
 
 # Application definition
@@ -79,7 +79,8 @@ WSGI_APPLICATION = 'skateclub.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3', d6io6uuc75rbnd
+#  USER ergmwvicxbapmm
 #     }
 # }
 
