@@ -22,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ix05-g*d(#@n10ei-&j=(qbne2v85=)iuj$lpe@cvxg+xu!)x&'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ix05-g*d(#@n10ei-&j=(qbne2v85=)iuj$lpe@cvxg+xu!)x&')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-skateclub-app.herokuapp.com']
+#  ALLOWED_HOSTS = ['django-skateclub-app.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 
 # Application definition
@@ -84,8 +85,12 @@ WSGI_APPLICATION = 'skateclub.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://ergmwvicxbapmm:abb6be3f60283c2b8768d7f7ae11be5f1e2094b36d6d61276c77550bb5eb9458@ec2-52-215-225-178.eu-west-1.compute.amazonaws.com:5432/d6io6uuc75rbnd')
+# }
+
 DATABASES = {
-    'default': dj_database_url.parse('postgres://ergmwvicxbapmm:abb6be3f60283c2b8768d7f7ae11be5f1e2094b36d6d61276c77550bb5eb9458@ec2-52-215-225-178.eu-west-1.compute.amazonaws.com:5432/d6io6uuc75rbnd')
+    'default': dj_database_url.parse('os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
